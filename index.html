@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Jaydes Songs</title>
+  <style>
+    body {
+      background: black;
+      color: white;
+      font-family: Arial;
+      text-align: center;
+    }
+
+    input {
+      padding: 10px;
+      width: 80%;
+      margin: 10px;
+    }
+
+    .song {
+      margin: 15px;
+      padding: 10px;
+      border: 1px solid white;
+    }
+
+    img {
+      width: 150px;
+    }
+  </style>
+</head>
+
+<body>
+
+<h1>ALL KNOWN JAYDES SONGS</h1>
+<p>made by blandlies</p>
+
+<input type="text" id="search" placeholder="Search songs..." onkeyup="searchSongs()">
+
+<h2>Recommended</h2>
+<div class="song">Popular Song 1</div>
+<div class="song">Popular Song 2</div>
+
+<h2>All Songs</h2>
+
+<div id="songs">
+
+  <div class="song">
+    <img src="https://via.placeholder.com/150">
+    <p>Song 1</p>
+    <audio controls>
+      <source src="" type="audio/mpeg">
+    </audio>
+  </div>
+
+  <div class="song">
+    <img src="https://via.placeholder.com/150">
+    <p>Song 2</p>
+    <audio controls>
+      <source src="" type="audio/mpeg">
+    </audio>
+  </div>
+
+</div>
+
+<script>
+function searchSongs() {
+  let input = document.getElementById("search").value.toLowerCase();
+  let songs = document.getElementsByClassName("song");
+
+  for (let i = 0; i < songs.length; i++) {
+    let text = songs[i].innerText.toLowerCase();
+    songs[i].style.display = text.includes(input) ? "" : "none";
+  }
+}
+</script>
+
+</body>
+</html>
